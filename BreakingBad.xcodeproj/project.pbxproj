@@ -17,6 +17,7 @@
 		E214D10A28F5E07D00040FB7 /* TextCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D10928F5E07C00040FB7 /* TextCharacterTableViewCell.swift */; };
 		E214D10C28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D10B28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift */; };
 		E214D10E28F5E19100040FB7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D10D28F5E19100040FB7 /* ViewModel.swift */; };
+		E214D11128F5E36000040FB7 /* NetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = E214D11028F5E36000040FB7 /* NetworkManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E214D11128F5E36000040FB7 /* NetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +113,9 @@
 			dependencies = (
 			);
 			name = BreakingBad;
+			packageProductDependencies = (
+				E214D11028F5E36000040FB7 /* NetworkManager */,
+			);
 			productName = BreakingBad;
 			productReference = E214D0EC28F18EC400040FB7 /* BreakingBad.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +144,9 @@
 				Base,
 			);
 			mainGroup = E214D0E328F18EC400040FB7;
+			packageReferences = (
+				E214D10F28F5E36000040FB7 /* XCRemoteSwiftPackageReference "NetworkManager" */,
+			);
 			productRefGroup = E214D0ED28F18EC400040FB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E214D10F28F5E36000040FB7 /* XCRemoteSwiftPackageReference "NetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/inTheAM/NetworkManager";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E214D11028F5E36000040FB7 /* NetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E214D10F28F5E36000040FB7 /* XCRemoteSwiftPackageReference "NetworkManager" */;
+			productName = NetworkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E214D0E428F18EC400040FB7 /* Project object */;
 }

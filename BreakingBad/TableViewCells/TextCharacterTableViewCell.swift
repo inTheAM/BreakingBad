@@ -7,8 +7,12 @@
 
 import UIKit
 
-final class TextCharacterTableViewCell: UITableViewCell {
+final class TextCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
     static let reuseIdentifier = "CharacterTableViewCell"
+    
+    func configure(with model: Model) {
+        
+    }
     
     func configureUI() {
         let stackView = UIStackView()

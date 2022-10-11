@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ModelType {
+enum ModelType: String {
     case characterWithImage,
          characterWithoutImage
 }

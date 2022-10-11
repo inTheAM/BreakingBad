@@ -16,7 +16,8 @@ class ViewController: UITableViewController {
         navigationItem.title = "Breaking Bad"
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        tableView.register(ImageCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithImage.rawValue)
+        tableView.register(TextCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithoutImage.rawValue)
         tableView.dataSource = viewModel
     }
 

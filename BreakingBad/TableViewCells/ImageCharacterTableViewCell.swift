@@ -8,7 +8,9 @@
 import UIKit
 
 final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
-    static let reuseIdentifier = "CharacterTableViewCell"
+    override var reuseIdentifier: String? {
+        ModelType.characterWithImage.rawValue
+    }
     
     func configure(with model: Model) {
         

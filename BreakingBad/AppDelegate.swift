@@ -5,6 +5,7 @@
 //  Created by Ahmed Mgua on 08/10/2022.
 //
 
+import NetworkManagerSDK
 import UIKit
 
 @main
@@ -14,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setting the base url for this app
+        Endpoint.setBaseURL("www.breakingbadapi.com/api/")
         return true
     }
 

@@ -18,6 +18,7 @@
 		E214D10C28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D10B28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift */; };
 		E214D10E28F5E19100040FB7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D10D28F5E19100040FB7 /* ViewModel.swift */; };
 		E214D11128F5E36000040FB7 /* NetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = E214D11028F5E36000040FB7 /* NetworkManager */; };
+		E214D11428F5E70200040FB7 /* EndpointsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11328F5E70200040FB7 /* EndpointsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		E214D10928F5E07C00040FB7 /* TextCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCharacterTableViewCell.swift; sourceTree = "<group>"; };
 		E214D10B28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCharacterTableViewCell.swift; sourceTree = "<group>"; };
 		E214D10D28F5E19100040FB7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E214D11328F5E70200040FB7 /* EndpointsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				E214D0F128F18EC400040FB7 /* SceneDelegate.swift */,
 				E214D0F328F18EC400040FB7 /* ViewController.swift */,
 				E214D10D28F5E19100040FB7 /* ViewModel.swift */,
+				E214D11228F5E6F600040FB7 /* Networking */,
 				E214D10828F5E05E00040FB7 /* TableViewCells */,
 				E214D0F828F18EC500040FB7 /* Assets.xcassets */,
 				E214D0FA28F18EC500040FB7 /* LaunchScreen.storyboard */,
@@ -95,6 +98,14 @@
 				E214D10B28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		E214D11228F5E6F600040FB7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E214D11328F5E70200040FB7 /* EndpointsList.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				E214D10A28F5E07D00040FB7 /* TextCharacterTableViewCell.swift in Sources */,
 				E214D10528F1937200040FB7 /* Coordinator.swift in Sources */,
 				E214D0F428F18EC400040FB7 /* ViewController.swift in Sources */,
+				E214D11428F5E70200040FB7 /* EndpointsList.swift in Sources */,
 				E214D0F028F18EC400040FB7 /* AppDelegate.swift in Sources */,
 				E214D10728F1939600040FB7 /* MainCoordinator.swift in Sources */,
 				E214D0F228F18EC400040FB7 /* SceneDelegate.swift in Sources */,

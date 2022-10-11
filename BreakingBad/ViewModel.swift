@@ -8,8 +8,12 @@
 import UIKit
 
 final class ViewModel: NSObject {
+    private(set) var characters: [Model] = []
+    private let charactersService: CharactersServiceProtocol
     
-    
+    init(charactersService: CharactersServiceProtocol = CharactersService()) {
+        self.charactersService = charactersService
+    }
     
 }
 
@@ -20,13 +24,16 @@ extension ViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if indexPath.row.isMultiple(of: 2) {
-            let cell = ImageCharacterTableViewCell()
-            cell.configureUI()
-            return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ModelType.characterWithImage.rawValue, for: indexPath) as! CustomTableViewCell
+            
+            (cell as? ImageCharacterTableViewCell)?.configureUI()
+            return cell as UITableViewCell
         } else {
-            let cell = TextCharacterTableViewCell()
-            cell.configureUI()
+            let cell = tableView.dequeueReusableCell(withIdentifier: ModelType.characterWithoutImage.rawValue, for: indexPath) as! CustomTableViewCell
+            
+            (cell as? TextCharacterTableViewCell)?.configureUI()
             return cell
         }
     }

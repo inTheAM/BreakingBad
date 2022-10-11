@@ -21,6 +21,7 @@
 		E214D11428F5E70200040FB7 /* EndpointsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11328F5E70200040FB7 /* EndpointsList.swift */; };
 		E214D11728F5E79A00040FB7 /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11628F5E79A00040FB7 /* ModelType.swift */; };
 		E214D11928F5E82200040FB7 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11828F5E82200040FB7 /* ModelProtocol.swift */; };
+		E214D11B28F5E86100040FB7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E214D11328F5E70200040FB7 /* EndpointsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointsList.swift; sourceTree = "<group>"; };
 		E214D11628F5E79A00040FB7 /* ModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		E214D11828F5E82200040FB7 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				E214D10928F5E07C00040FB7 /* TextCharacterTableViewCell.swift */,
 				E214D10B28F5E0B000040FB7 /* ImageCharacterTableViewCell.swift */,
+				E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				E214D0F428F18EC400040FB7 /* ViewController.swift in Sources */,
 				E214D11428F5E70200040FB7 /* EndpointsList.swift in Sources */,
 				E214D0F028F18EC400040FB7 /* AppDelegate.swift in Sources */,
+				E214D11B28F5E86100040FB7 /* CustomTableViewCell.swift in Sources */,
 				E214D10728F1939600040FB7 /* MainCoordinator.swift in Sources */,
 				E214D0F228F18EC400040FB7 /* SceneDelegate.swift in Sources */,
 				E214D10E28F5E19100040FB7 /* ViewModel.swift in Sources */,

@@ -15,7 +15,7 @@ final class TextCharacterTableViewCell: UITableViewCell {
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        stackView.backgroundColor = .purple.withAlphaComponent(0.5)
+        
         let nameLabel = UILabel()
         nameLabel.text = "Label"
         nameLabel.font = .boldSystemFont(ofSize: 16)

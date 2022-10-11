@@ -11,30 +11,30 @@ final class ImageCharacterTableViewCell: UITableViewCell {
     static let reuseIdentifier = "CharacterTableViewCell"
     
     func configureUI() {
+        // Creating the stack view
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        stackView.backgroundColor = .red.withAlphaComponent(0.5)
+        
+        // Character image setup
         let image = UIImage(systemName: "person.fill")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
         
-        let textStackView = UIStackView()
-        textStackView.axis = .vertical
+        // Character overview setup
+        // Name label
         let nameLabel = UILabel()
         nameLabel.text = "Label"
         nameLabel.font = .boldSystemFont(ofSize: 16)
         nameLabel.backgroundColor = .white.withAlphaComponent(0.4)
-        let descriptionLabel = UILabel()
-        descriptionLabel.text = "Description"
         
         stackView.addArrangedSubview(imageView)
-        textStackView.addArrangedSubview(nameLabel)
+        stackView.addArrangedSubview(nameLabel)
         
-        stackView.addArrangedSubview(textStackView)
         stackView.distribution = .fillProportionally
         
+        // Setting constraints
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),

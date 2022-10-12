@@ -47,6 +47,7 @@ extension ViewModel: UITableViewDataSource {
         let identifier = character.type.rawValue
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomTableViewCell
         cell.configure(with: character)
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     

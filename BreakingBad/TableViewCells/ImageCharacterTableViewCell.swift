@@ -11,34 +11,39 @@ final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
     override var reuseIdentifier: String? {
         ModelType.characterWithImage.rawValue
     }
+    private var character: BBCharacter!
     
-    func configure(with model: Model) {
-        
-    }
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 16)
+        label.textColor = .label
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    func configureUI() {
-        // Creating the stack view
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stackView)
-        
-        // Character image setup
+        return stackView
+    }()
+    
+    private lazy var characterImage: UIImageView = {
         let image = UIImage(systemName: "person.fill")
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(stackView)
         
-        // Character overview setup
-        // Name label
-        let nameLabel = UILabel()
-        nameLabel.text = "Label"
-        nameLabel.font = .boldSystemFont(ofSize: 16)
-        nameLabel.backgroundColor = .white.withAlphaComponent(0.4)
-        
-        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(characterImage)
         stackView.addArrangedSubview(nameLabel)
-        
-        stackView.distribution = .fillProportionally
         
         // Setting constraints
         NSLayoutConstraint.activate([
@@ -46,8 +51,32 @@ final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
             stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1),
+            characterImage.heightAnchor.constraint(equalToConstant: 100),
+            characterImage.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            characterImage.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
         ])
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func configure(with model: Model) {
+        guard let model = model as? BBCharacter else {
+            print("Unable to cast model as BBCharacter: \(model)")
+            return
+        }
+        
+        self.character = model
+        
+        configureUI()
+    }
+    
+    func configureUI() {
+        nameLabel.text = character.name
+        
+        
+        
     }
 }

@@ -8,5 +8,5 @@
 import NetworkManagerSDK
 
 extension Endpoint {
-    static let characters = Endpoint(httpMethod: .get, url: "https://www.breakingbadapi.com/api/characters?limit=16")
+    static let characters = Endpoint(httpMethod: .get, url: "https://www.breakingbadapi.com/api/characters")
 }

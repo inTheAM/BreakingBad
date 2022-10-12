@@ -24,6 +24,7 @@
 		E214D11B28F5E86100040FB7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */; };
 		E214D11D28F5EB6B00040FB7 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11C28F5EB6B00040FB7 /* CharactersService.swift */; };
 		E214D11F28F7391B00040FB7 /* BBCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11E28F7391B00040FB7 /* BBCharacter.swift */; };
+		E214D12228F73AD900040FB7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E214D12128F73AD900040FB7 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E214D12228F73AD900040FB7 /* Kingfisher in Frameworks */,
 				E214D11128F5E36000040FB7 /* NetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +151,7 @@
 			name = BreakingBad;
 			packageProductDependencies = (
 				E214D11028F5E36000040FB7 /* NetworkManager */,
+				E214D12128F73AD900040FB7 /* Kingfisher */,
 			);
 			productName = BreakingBad;
 			productReference = E214D0EC28F18EC400040FB7 /* BreakingBad.app */;
@@ -180,6 +183,7 @@
 			mainGroup = E214D0E328F18EC400040FB7;
 			packageReferences = (
 				E214D10F28F5E36000040FB7 /* XCRemoteSwiftPackageReference "NetworkManager" */,
+				E214D12028F73AD900040FB7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E214D0ED28F18EC400040FB7 /* Products */;
 			projectDirPath = "";
@@ -438,6 +442,14 @@
 				kind = branch;
 			};
 		};
+		E214D12028F73AD900040FB7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -445,6 +457,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E214D10F28F5E36000040FB7 /* XCRemoteSwiftPackageReference "NetworkManager" */;
 			productName = NetworkManager;
+		};
+		E214D12128F73AD900040FB7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E214D12028F73AD900040FB7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

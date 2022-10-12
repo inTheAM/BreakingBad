@@ -5,6 +5,7 @@
 //  Created by Ahmed Mgua on 11/10/2022.
 //
 
+import Kingfisher
 import UIKit
 
 final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
@@ -51,7 +52,7 @@ final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
             stackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             stackView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            characterImage.heightAnchor.constraint(equalToConstant: 100),
+            characterImage.heightAnchor.constraint(equalToConstant: 150),
             characterImage.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             characterImage.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             
@@ -75,8 +76,8 @@ final class ImageCharacterTableViewCell: UITableViewCell, CustomTableViewCell {
     
     func configureUI() {
         nameLabel.text = character.name
-        
-        
-        
+        guard let imageURL = URL(string: character.image)
+        else { return }
+        characterImage.kf.setImage(with: imageURL)
     }
 }

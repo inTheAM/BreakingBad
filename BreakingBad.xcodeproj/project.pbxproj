@@ -23,6 +23,7 @@
 		E214D11928F5E82200040FB7 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11828F5E82200040FB7 /* ModelProtocol.swift */; };
 		E214D11B28F5E86100040FB7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */; };
 		E214D11D28F5EB6B00040FB7 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11C28F5EB6B00040FB7 /* CharactersService.swift */; };
+		E214D11F28F7391B00040FB7 /* BBCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11E28F7391B00040FB7 /* BBCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E214D11828F5E82200040FB7 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E214D11C28F5EB6B00040FB7 /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
+		E214D11E28F7391B00040FB7 /* BBCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				E214D11628F5E79A00040FB7 /* ModelType.swift */,
 				E214D11828F5E82200040FB7 /* ModelProtocol.swift */,
+				E214D11E28F7391B00040FB7 /* BBCharacter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E214D10A28F5E07D00040FB7 /* TextCharacterTableViewCell.swift in Sources */,
+				E214D11F28F7391B00040FB7 /* BBCharacter.swift in Sources */,
 				E214D11728F5E79A00040FB7 /* ModelType.swift in Sources */,
 				E214D10528F1937200040FB7 /* Coordinator.swift in Sources */,
 				E214D0F428F18EC400040FB7 /* ViewController.swift in Sources */,

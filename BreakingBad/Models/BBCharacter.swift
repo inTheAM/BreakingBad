@@ -12,7 +12,7 @@ struct BBCharacter: Model, Decodable {
     let type: ModelType = Bool.random() ? .characterWithImage : .characterWithoutImage
     let name: String
     let status: String
-    let image: String?
+    let image: String
     
     enum CodingKeys: String, CodingKey {
         case name,

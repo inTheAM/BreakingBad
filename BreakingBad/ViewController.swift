@@ -17,11 +17,19 @@ class ViewController: UITableViewController {
         navigationItem.title = "Breaking Bad"
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.dataSource = viewModel
+        registerCells()
+        viewModel.fetchCharacters()
+        receiveData()
+        
+    }
+    
+    func registerCells() {
         tableView.register(ImageCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithImage.rawValue)
         tableView.register(TextCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithoutImage.rawValue)
-        tableView.dataSource = viewModel
-        viewModel.fetchCharacters()
-        
+    }
+    
+    func receiveData() {
         viewModel.characters
             .sink { [weak self] _ in
                 self?.tableView.reloadData()

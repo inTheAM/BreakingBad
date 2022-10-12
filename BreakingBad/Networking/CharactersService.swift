@@ -9,7 +9,7 @@ import Combine
 import NetworkManagerSDK
 
 protocol CharactersServiceProtocol {
-    
+    func fetchCharacters() -> AnyPublisher<[BBCharacter], RequestError>
 }
 
 struct CharactersService {
@@ -21,5 +21,10 @@ struct CharactersService {
 }
 
 extension CharactersService: CharactersServiceProtocol {
-    
+    func fetchCharacters() -> AnyPublisher<[BBCharacter], RequestError> {
+        networkManager.performRequest(endpoint: .characters, authType: .none, response: [BBCharacter].self)
+            .eraseToAnyPublisher()
+    }
 }
+
+

@@ -4,12 +4,13 @@
 //
 //  Created by Ahmed Mgua on 08/10/2022.
 //
-
+import Combine
 import UIKit
 
 class ViewController: UITableViewController {
     weak var coordinator: Coordinator?
     private let viewModel = ViewModel()
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,13 @@ class ViewController: UITableViewController {
         tableView.register(ImageCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithImage.rawValue)
         tableView.register(TextCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithoutImage.rawValue)
         tableView.dataSource = viewModel
+        viewModel.fetchCharacters()
+        
+        viewModel.characters
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 
 }

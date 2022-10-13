@@ -38,5 +38,12 @@ extension ViewController {
         UITableView.automaticDimension
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = viewModel.characters[indexPath.row]
+        guard let coordinator = coordinator as? MainCoordinator
+        else { return }
+        
+        coordinator.showDetail(for: character)
+    }
 }
 

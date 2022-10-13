@@ -21,5 +21,8 @@ final class MainCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: false)
     }
     
+    func showDetail(for model: Model) {
+        
+    }
     
 }

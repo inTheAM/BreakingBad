@@ -16,7 +16,7 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController()
+        let viewController = CharactersListViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: false)
     }

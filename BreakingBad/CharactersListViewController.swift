@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class CharactersListViewController: UITableViewController {
     weak var coordinator: Coordinator?
     private let viewModel = ViewModel()
     
@@ -33,7 +33,7 @@ class ViewController: UITableViewController {
 
 }
 
-extension ViewController {
+extension CharactersListViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }

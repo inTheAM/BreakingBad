@@ -11,7 +11,7 @@ enum CharacterServiceError {
     case failedToFetchCharacters
 }
 final class ViewModel: NSObject {
-    private(set) var characters = CurrentValueSubject<[Model], Never>([])
+    private(set) var characters = [Model]()
     private let charactersService: CharactersServiceProtocol
     private(set) var error = PassthroughSubject<CharacterServiceError, Never>()
     private var cancellables = Set<AnyCancellable>()
@@ -19,7 +19,7 @@ final class ViewModel: NSObject {
         self.charactersService = charactersService
     }
     
-    func fetchCharacters() {
+    func fetchCharacters(_ completionHandler: @escaping ()->()) {
         charactersService.fetchCharacters()
             .receive(on: RunLoop.main)
             .catch { error -> AnyPublisher<[BBCharacter], Never> in
@@ -29,7 +29,7 @@ final class ViewModel: NSObject {
                     .eraseToAnyPublisher()
             }
             .sink { characters in
-                self.characters.send(characters)
+                self.characters = characters
             }
             .store(in: &cancellables)
     }
@@ -39,11 +39,11 @@ final class ViewModel: NSObject {
 extension ViewModel: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        characters.value.count
+        characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = characters.value[indexPath.row]
+        let character = characters[indexPath.row]
         let identifier = character.type.rawValue
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomTableViewCell
         cell.configure(with: character)

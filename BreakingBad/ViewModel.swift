@@ -30,6 +30,7 @@ final class ViewModel: NSObject {
             }
             .sink { characters in
                 self.characters = characters
+                completionHandler()
             }
             .store(in: &cancellables)
     }

@@ -18,6 +18,7 @@ enum CharacterServiceError: String, Error {
 
 /// # NetworkManagerSDK is a Combine networking Framework I am building and using in my personal projects.
 /// Creating a service is done as below, where the `NetworkManager` object makes requests, requiring only an Endpoint, which you can make as in the `EndpointsList` struct.
+/// Using `NetworkManagerProtocol` allows stubbing in unit testing to skip making actual network requests.
 /// If you have any questions or would like to see the code, let me know.
 struct CharactersService {
     private let networkManager: NetworkManagerProtocol

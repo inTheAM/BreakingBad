@@ -8,8 +8,9 @@
 import Foundation
 
 struct BBCharacter: Model, Decodable {
-    // simulating different types
+    // Simulating different types
     let type: ModelType = Bool.random() ? .characterWithImage : .characterWithoutImage
+    
     let name: String
     let portrayed: String
     let status: String
@@ -18,6 +19,7 @@ struct BBCharacter: Model, Decodable {
     let birthday: String
     let appearance: [Int]
     
+    // Decodable conformance
     enum CodingKeys: String, CodingKey {
         case name,
              portrayed,

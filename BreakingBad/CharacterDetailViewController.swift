@@ -42,7 +42,7 @@ class CharacterDetailViewController: UIViewController {
         characterImage.kf.setImage(with: imageURL)
         
         // Creating the portrayed by view
-        let portrayedBy = makeLabel(title: "Portrayed by", detail: character.portrayed)
+        let portrayedBy = makeLabel(title: "Portrayed by:", detail: character.portrayed)
         
         // Creating the nickname view
         let nickname = makeLabel(title: "Nickname:", detail: character.nickname)

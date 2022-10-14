@@ -11,25 +11,31 @@ struct BBCharacter: Model, Decodable {
     // simulating different types
     let type: ModelType = Bool.random() ? .characterWithImage : .characterWithoutImage
     let name: String
+    let portrayed: String
     let status: String
     let image: String
+    let nickname: String
+    let birthday: String
+    let appearance: [Int]
     
     enum CodingKeys: String, CodingKey {
         case name,
+             portrayed,
              status,
-             image = "img"
+             image = "img",
+             nickname,
+             birthday,
+             appearance
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
+        portrayed = try container.decode(String.self, forKey: .portrayed)
         status = try container.decode(String.self, forKey: .status)
         image = try container.decode(String.self, forKey: .image)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.name, forKey: .name)
-        try container.encode(self.status, forKey: .status)
+        nickname = try container.decode(String.self, forKey: .nickname)
+        birthday = try container.decode(String.self, forKey: .birthday)
+        appearance = try container.decode([Int].self, forKey: .appearance)
     }
 }

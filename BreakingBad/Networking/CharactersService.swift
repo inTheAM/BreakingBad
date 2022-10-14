@@ -12,6 +12,13 @@ protocol CharactersServiceProtocol {
     func fetchCharacters() -> AnyPublisher<[BBCharacter], RequestError>
 }
 
+enum CharacterServiceError: String, Error {
+    case failedToFetchCharacters = "Failed to fetch characters."
+}
+
+/// # NetworkManagerSDK is a Combine networking Framework I am building and using in my personal projects.
+/// Creating a service is done as below, where the `NetworkManager` object makes requests, requiring only an Endpoint, which you can make as in the `EndpointsList` struct.
+/// If you have any questions or would like to see the code, let me know.
 struct CharactersService {
     private let networkManager: NetworkManagerProtocol
     

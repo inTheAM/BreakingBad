@@ -22,7 +22,11 @@ final class MainCoordinator: Coordinator {
     }
     
     func showDetail(for model: Model) {
-        
+        guard let character = model as? BBCharacter
+        else { return }
+        let viewController = CharacterDetailViewController()
+        viewController.character = character
+        navigationController.pushViewController(viewController, animated: true)
     }
     
 }

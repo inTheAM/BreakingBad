@@ -5,12 +5,13 @@
 //  Created by Ahmed Mgua on 08/10/2022.
 //
 
+import Combine
 import UIKit
 
 class CharactersListViewController: UITableViewController {
     weak var coordinator: Coordinator?
     private let viewModel = ViewModel()
-    
+    private var cancellables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,28 @@ class CharactersListViewController: UITableViewController {
         viewModel.fetchCharacters { [weak self] in
             self?.tableView.reloadData()
         }
-        
+        handleError()
         
     }
     
     func registerCells() {
         tableView.register(ImageCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithImage.rawValue)
         tableView.register(TextCharacterTableViewCell.self, forCellReuseIdentifier: ModelType.characterWithoutImage.rawValue)
+    }
+    
+    func handleError() {
+        viewModel.error
+            .sink { [weak self] error in
+                self?.presentErrorAlert(error)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func presentErrorAlert(_ error: CharacterServiceError) {
+        let alert = UIAlertController(title: "Error", message: error.rawValue, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(ok)
+        present(alert, animated: true)
     }
 
 }

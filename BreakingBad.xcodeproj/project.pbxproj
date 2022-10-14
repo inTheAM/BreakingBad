@@ -25,6 +25,7 @@
 		E214D11D28F5EB6B00040FB7 /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11C28F5EB6B00040FB7 /* CharactersService.swift */; };
 		E214D11F28F7391B00040FB7 /* BBCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D11E28F7391B00040FB7 /* BBCharacter.swift */; };
 		E214D12228F73AD900040FB7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E214D12128F73AD900040FB7 /* Kingfisher */; };
+		E214D12428F8694000040FB7 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214D12328F8694000040FB7 /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E214D11A28F5E86100040FB7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		E214D11C28F5EB6B00040FB7 /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		E214D11E28F7391B00040FB7 /* BBCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCharacter.swift; sourceTree = "<group>"; };
+		E214D12328F8694000040FB7 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				E214D0EF28F18EC400040FB7 /* AppDelegate.swift */,
 				E214D0F128F18EC400040FB7 /* SceneDelegate.swift */,
 				E214D0F328F18EC400040FB7 /* CharactersListViewController.swift */,
+				E214D12328F8694000040FB7 /* CharacterDetailViewController.swift */,
 				E214D10D28F5E19100040FB7 /* ViewModel.swift */,
 				E214D11528F5E78E00040FB7 /* Models */,
 				E214D11228F5E6F600040FB7 /* Networking */,
@@ -221,6 +224,7 @@
 				E214D11B28F5E86100040FB7 /* CustomTableViewCell.swift in Sources */,
 				E214D10728F1939600040FB7 /* MainCoordinator.swift in Sources */,
 				E214D0F228F18EC400040FB7 /* SceneDelegate.swift in Sources */,
+				E214D12428F8694000040FB7 /* CharacterDetailViewController.swift in Sources */,
 				E214D10E28F5E19100040FB7 /* ViewModel.swift in Sources */,
 				E214D11D28F5EB6B00040FB7 /* CharactersService.swift in Sources */,
 				E214D11928F5E82200040FB7 /* ModelProtocol.swift in Sources */,

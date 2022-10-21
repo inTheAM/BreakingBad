@@ -61,5 +61,21 @@ extension CharactersListViewController {
         
         coordinator.showDetail(for: character)
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.characters.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let character = viewModel.characters[indexPath.row]
+        let identifier = character.type.rawValue
+        
+        // Setting the table view cell based on the type of data received
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomTableViewCell
+        
+        cell.configure(with: character)
+        cell.accessoryType = .disclosureIndicator
+        return cell
+    }
 }
 

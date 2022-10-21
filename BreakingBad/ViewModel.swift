@@ -37,8 +37,8 @@ final class ViewModel: NSObject {
                     .setFailureType(to: Never.self)
                     .eraseToAnyPublisher()
             }
-            .sink { characters in
-                self.characters = characters
+            .sink { [weak self] characters in
+                self?.characters = characters
                 completionHandler()
             }
             .store(in: &cancellables)
@@ -46,23 +46,3 @@ final class ViewModel: NSObject {
     
 }
 
-extension ViewModel: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        characters.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = characters[indexPath.row]
-        let identifier = character.type.rawValue
-        
-        // Setting the table view cell based on the type of data received
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! CustomTableViewCell
-        
-        cell.configure(with: character)
-        cell.accessoryType = .disclosureIndicator
-        return cell
-    }
-    
-    
-}

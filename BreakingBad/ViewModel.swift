@@ -8,7 +8,7 @@
 import Combine
 import UIKit
 
-final class ViewModel: NSObject {
+final class ViewModel {
     /// The characters to show in the tableview
     private(set) var characters = [Model]()
     
@@ -43,6 +43,5 @@ final class ViewModel: NSObject {
             }
             .store(in: &cancellables)
     }
-    
 }
 

@@ -18,7 +18,6 @@ class CharactersListViewController: UITableViewController {
         navigationItem.title = "Breaking Bad"
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.dataSource = viewModel
         registerCells()
         viewModel.fetchCharacters { [weak self] in
             self?.tableView.reloadData()

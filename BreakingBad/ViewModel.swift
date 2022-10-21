@@ -6,7 +6,7 @@
 //
 
 import Combine
-import UIKit
+import Foundation
 
 final class ViewModel {
     /// The characters to show in the tableview
